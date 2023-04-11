@@ -19,7 +19,8 @@
   },
   "dependencies": {
     "@types/node": "*",
-    "dotenv": "^16.0.3",
-    "express": "4.18.2"
+    "dotenv": "16.0.3",
+    "express": "4.18.2",
+    "openai": "3.2.1"
   }
 }
