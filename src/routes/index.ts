@@ -7,7 +7,7 @@ router.get("/", (_req, res) => {
     res.send("Backend of Google Translate Api")
 })
 
-router.get("/translate", (req, res) => {
+router.post("/translate", (req, res) => {
     try {
         const [fromLanguage, toLanguage, text] = req.body
         res.send(translate({fromLanguage, toLanguage, text}))        
