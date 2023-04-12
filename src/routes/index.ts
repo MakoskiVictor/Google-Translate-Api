@@ -7,10 +7,11 @@ router.get("/", (_req, res) => {
     res.send("Backend of Google Translate Api")
 })
 
-router.post("/translate", (req, res) => {
+router.post("/translate", async (req, res) => {
+    const {fromLanguage, toLanguage, text} = req.body
     try {
-        const [fromLanguage, toLanguage, text] = req.body
-        res.send(translate({fromLanguage, toLanguage, text}))        
+        const response = await translate({fromLanguage, toLanguage, text})
+        res.send(response)        
     } catch (error) {
       res.send(error)  
     }
