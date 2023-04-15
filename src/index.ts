@@ -1,12 +1,12 @@
 import express from "express"
 import routes from "./routes/index"
 import cors from "cors"
-import { LINKED_FRONT } from "../constants"
+import { WHITELIST } from "../constants"
 
 const app = express()
 
 app.use(cors({
-    origin: LINKED_FRONT
+    origin: WHITELIST
 }))
 app.use(express.json())
 
