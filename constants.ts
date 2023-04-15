@@ -6,4 +6,4 @@ export const SUPPORTED_LANGUAGES = {
   
   export const AUTO_LANGUAGE = 'auto'
 
-  export const LINKED_FRONT = 'https://google-translate-clonned.vercel.app'
+  export const WHITELIST = ['https://google-translate-clonned.vercel.app', 'https://google-translate-clonned.vercel.app/', 'http://localhost:5173']
