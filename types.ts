@@ -1,4 +1,3 @@
-import { type } from "os"
 import { SUPPORTED_LANGUAGES, AUTO_LANGUAGE } from "./constants"
 
 export interface State {
