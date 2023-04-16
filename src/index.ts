@@ -7,11 +7,16 @@ import { translate } from "./controllers/translate"
 const app = express()
 const router = express.Router()
 
-app.use(cors({
+/* app.use(cors({
     origin: WHITELIST,
     optionsSuccessStatus: 200
-}))
+})) */
 app.use(express.json())
+
+const corsOptions = {
+    origin: WHITELIST,
+    optionsSuccessStatus: 200
+  }
 
 const PORT = process.env.PORT || 3000
 
@@ -21,7 +26,7 @@ router.get("/", (_req, res) => {
     res.send("Backend of Google Translate Api")
 })
 
-router.post("/translate", async (req, res) => {
+router.post("/translate", cors(corsOptions), async (req, res) => {
     const {fromLanguage, toLanguage, text} = req.body
     try {
         const response = await translate({fromLanguage, toLanguage, text})
