@@ -1,7 +1,7 @@
 import express from "express"
 import routes from "./routes/index"
 import cors from "cors"
-import { WHITELIST } from "../constants"
+import { WHITELIST } from "./constants"
 
 const app = express()
 

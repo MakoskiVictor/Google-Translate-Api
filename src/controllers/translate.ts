@@ -1,5 +1,5 @@
-import { type Props } from "../../types"
-import { SUPPORTED_LANGUAGES } from "../../constants";
+import { type Props } from "../types"
+import { SUPPORTED_LANGUAGES } from "../constants";
 
 import { ChatCompletionRequestMessageRoleEnum, Configuration, OpenAIApi } from "openai";
 import * as dotenv from "dotenv"
