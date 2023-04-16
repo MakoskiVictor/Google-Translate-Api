@@ -1,7 +1,10 @@
-import express from "express";
+/* import express from "express";
 import { translate } from "../controllers/translate";
 
+
 const router = express.Router()
+
+
 
 router.get("/", (_req, res) => {
     res.send("Backend of Google Translate Api")
@@ -18,4 +21,4 @@ router.post("/translate", async (req, res) => {
     }
 })
 
-export default router
+export default router */
