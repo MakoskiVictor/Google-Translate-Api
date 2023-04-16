@@ -1,4 +1,4 @@
-/* import express from "express";
+import express from "express";
 import { translate } from "../controllers/translate";
 
 
@@ -21,4 +21,4 @@ router.post("/translate", async (req, res) => {
     }
 })
 
-export default router */
+export default router
