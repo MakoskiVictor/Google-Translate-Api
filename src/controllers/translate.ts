@@ -1,4 +1,4 @@
-import { type Props } from "../../types.d"
+import { type Props } from "../../types"
 import { SUPPORTED_LANGUAGES } from "../../constants";
 
 import { ChatCompletionRequestMessageRoleEnum, Configuration, OpenAIApi } from "openai";
