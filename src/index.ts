@@ -1,6 +1,6 @@
 import express from "express"
 import routes from "./routes/index"
-import cors from "cors"
+/* import cors from "cors" */
 import bodyParser from "body-parser"
 /* import { WHITELIST } from "./constants" */
 
