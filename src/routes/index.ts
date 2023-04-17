@@ -13,7 +13,7 @@ router.get("/", (_req, res) => {
 router.post("/translate", async (req, res) => {
     const {fromLanguage, toLanguage, text} = req.body
     try {
-        const response = await translate({fromLanguage, toLanguage, text})
+         await translate({fromLanguage, toLanguage, text})
         .then(response => res.send(JSON.stringify(response)))
         /* res.setHeader('Content-Type', 'application/json') */
         /* const response = "Hola me llamo Victor desde el back :D" */
