@@ -15,7 +15,8 @@ router.post("/translate", async (_req, res) => {
     try {
         /* const response = await translate({fromLanguage, toLanguage, text})
         res.setHeader('Content-Type', 'application/json') */
-        res.send(JSON.stringify({"Hola me llamo Victor desde el back :D"}))        
+        const response = "Hola me llamo Victor desde el back :D"
+        res.send(JSON.stringify(response))        
     } catch (error) {
       res.send(error)  
     }
