@@ -62,7 +62,6 @@ export async function translate ({
       }
     ]
   })
-
-  const responseTranslated = completion.data.choices[0]?.message?.content
-  return responseTranslated
+  
+  return completion.data.choices[0]?.message?.content
 }
