@@ -17,7 +17,7 @@ export async function translate ({
   }: Props)  {
 
     if(fromLanguage === toLanguage) return text
-
+    try {
     const messages = [
         {
           role: ChatCompletionRequestMessageRoleEnum.System,
@@ -51,7 +51,7 @@ export async function translate ({
 
       const fromCode = fromLanguage === 'auto' ? 'auto' : SUPPORTED_LANGUAGES[fromLanguage]
       const toCode = SUPPORTED_LANGUAGES[toLanguage]
-  try {
+  
     const completion = await openai.createChatCompletion({
       model: 'gpt-3.5-turbo',
       messages: [
