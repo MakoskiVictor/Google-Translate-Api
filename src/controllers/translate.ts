@@ -17,7 +17,7 @@ export async function translate ({
   }: Props)  {
 
     if(fromLanguage === toLanguage) return text
-    try {
+
     const messages = [
         {
           role: ChatCompletionRequestMessageRoleEnum.System,
@@ -52,21 +52,16 @@ export async function translate ({
       const fromCode = fromLanguage === 'auto' ? 'auto' : SUPPORTED_LANGUAGES[fromLanguage]
       const toCode = SUPPORTED_LANGUAGES[toLanguage]
   
-    const completion = await openai.createChatCompletion({
-      model: 'gpt-3.5-turbo',
-      messages: [
-        ...messages,
-        {
-          role: ChatCompletionRequestMessageRoleEnum.User,
-          content: `${text} {{${fromCode}}} [[${toCode}]]`
-        }
-      ]
-    })
-    
-    return completion.data.choices[0]?.message?.content
-
-  } catch (error) {
-    return error
-  }
+  const completion = await openai.createChatCompletion({
+    model: 'gpt-3.5-turbo',
+    messages: [
+      ...messages,
+      {
+        role: ChatCompletionRequestMessageRoleEnum.User,
+        content: `${text} {{${fromCode}}} [[${toCode}]]`
+      }
+    ]
+  })
   
+  return completion.data.choices[0]?.message?.content
 }
