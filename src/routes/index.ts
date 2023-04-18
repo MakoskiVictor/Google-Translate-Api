@@ -13,11 +13,11 @@ router.get("/", (_req, res) => {
 router.post("/translate", async (req, res) => {
     const {fromLanguage, toLanguage, text} = req.body
     try {
-         await translate({fromLanguage, toLanguage, text})
-        .then(response => res.send(JSON.stringify(response)))
+        /* const response = await translate({fromLanguage, toLanguage, text}) */
+        
         /* res.setHeader('Content-Type', 'application/json') */
         /* const response = "Hola me llamo Victor desde el back :D" */
-        /* res.send(response)  */       
+        res.send({fromLanguage, toLanguage, text})        
     } catch (error) {
       res.send(error)  
     }
