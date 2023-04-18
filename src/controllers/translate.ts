@@ -51,17 +51,22 @@ export async function translate ({
 
       const fromCode = fromLanguage === 'auto' ? 'auto' : SUPPORTED_LANGUAGES[fromLanguage]
       const toCode = SUPPORTED_LANGUAGES[toLanguage]
+  try {
+    const completion = await openai.createChatCompletion({
+      model: 'gpt-3.5-turbo',
+      messages: [
+        ...messages,
+        {
+          role: ChatCompletionRequestMessageRoleEnum.User,
+          content: `${text} {{${fromCode}}} [[${toCode}]]`
+        }
+      ]
+    })
+    
+    return completion.data.choices[0]?.message?.content
 
-  const completion = await openai.createChatCompletion({
-    model: 'gpt-3.5-turbo',
-    messages: [
-      ...messages,
-      {
-        role: ChatCompletionRequestMessageRoleEnum.User,
-        content: `${text} {{${fromCode}}} [[${toCode}]]`
-      }
-    ]
-  })
+  } catch (error) {
+    return error
+  }
   
-  return completion.data.choices[0]?.message?.content
 }
